@@ -4,9 +4,9 @@ server:
 openapi3:
   enabled: true
   contact:
-    name: Ding XinYu
-    url: https://blog.csdn.net/qq_40977710
-    email: ding.xin.yu@foxmail.com
+    name: 
+    url: 
+    email: 
   title: 数字鸽业物流系统接口文档  #接口文档标题
   version: 0.0.14  #接口文档版本
   description: 这是Swagger3生成的接口文档,可以查看和调试文档  #接口文档描述
@@ -43,13 +43,13 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://139.9.89.20:3306/pigeon_logistics?characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false
-    username: root
-    password: root
+    url: jdbc:mysql://localhost:3306/pigeon_logistics?characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: 
+    password: 
   mail:
-    username: dxy2288@163.com
-    password: IRSMWTFLUNYIGHHU
-    host: smtp.163.com
+    username: 
+    password: 
+    host: 
     default-encoding: utf-8
     port: 465
     properties:
