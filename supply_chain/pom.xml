@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress VulnerableLibrariesLocal -->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.pigeon</groupId>
+        <artifactId>com-pigeon-logistics</artifactId>
+        <version>0.0.9-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>com-pigeon-logistics-supply-chain</artifactId>
+    <description>供应链管理</description>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.pigeon</groupId>
+            <artifactId>com-pigeon-logistics-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!--生成pdf工具（Maven导入不顺利，直接使用jar包引入吧）-->
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.xls.free</artifactId>
+            <version>5.1.0</version>
+            <scope>system</scope>
+            <!-- 使用绝对路径使子工程也能找到引用的包，这里注意要修改成本地的地址！-->
+            <!-- <systemPath>D:/IdeaProjects/pigeon-logistics/doc/lib/spire.xls.free-5.1.0.jar</systemPath>-->
+            <systemPath>${pom.basedir}/../doc/lib/spire.xls.free-5.1.0.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+</project>

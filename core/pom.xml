@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress VulnerableLibrariesLocal -->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.pigeon</groupId>
+        <artifactId>com-pigeon-logistics</artifactId>
+        <version>0.0.9-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>com-pigeon-logistics-core</artifactId>
+    <description>核心引擎与公共配置</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <!-- 业务模块 -->
+        <dependency>
+            <groupId>com.pigeon</groupId>
+            <artifactId>com-pigeon-logistics-supply-chain</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pigeon</groupId>
+            <artifactId>com-pigeon-logistics-delivery</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pigeon</groupId>
+            <artifactId>com-pigeon-logistics-distribution</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--指定主类-->
+                    <mainClass>com.pigeon.logistics.LogisticsApplication</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals> <!--可以把依赖的包都打包到生成的jar包中-->
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

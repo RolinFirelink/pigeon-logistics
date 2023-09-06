@@ -1,0 +1,90 @@
+server:
+  port: 8017
+
+openapi3:
+  enabled: true
+  contact:
+    name: Ding XinYu
+    url: https://blog.csdn.net/qq_40977710
+    email: ding.xin.yu@foxmail.com
+  title: 数字鸽业物流系统接口文档  #接口文档标题
+  version: 0.0.14  #接口文档版本
+  description: 这是Swagger3生成的接口文档,可以查看和调试文档  #接口文档描述
+  termsOfServiceUrl: 服务条款
+  license: The Apache License
+  licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+
+spring:
+  application:
+    name: pigeon-logistics
+  cache:
+    type: simple
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    encoding: UTF-8 #编码
+    suffix: .html #模板后缀
+    mode: HTML #模板
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    nacos:
+      config:
+        enabled: false
+        refresh-enable: false
+        server-addr: 172.17.98.87:8848
+      discovery:
+        enabled: false
+        instance-enabled: false
+        server-addr: 172.17.98.87:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.9.89.20:3306/pigeon_logistics?characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root
+  mail:
+    username: dxy2288@163.com
+    password: IRSMWTFLUNYIGHHU
+    host: smtp.163.com
+    default-encoding: utf-8
+    port: 465
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: console # SpringBoot 横幅开关
+  devtools:
+    restart:
+      # 默认为true
+      enabled: true
+
+mybatis-plus:
+  configuration:
+    #下划线转驼峰
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: true # Mybatis 横幅开关
+    db-config:
+      # 全局逻辑删除的实体字段名
+      logic-delete-field: deleted
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: 0
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: 1
+      # 全局主键类型
+      id-type: auto
+  mapper-locations: classpath:mapper/*.xml
+
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  tracker-list: 134.175.208.235:22122
+  webServerUrl: 134.175.208.235

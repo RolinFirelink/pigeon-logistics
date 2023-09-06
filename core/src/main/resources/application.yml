@@ -1,0 +1,8 @@
+spring:
+#  profiles：老版本配置项，已废弃
+  profiles:
+    active: dev
+#  config:
+#    activate:
+#      on-profile:
+#        - dev
